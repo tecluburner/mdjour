@@ -1,2 +1,15 @@
 # mdjour
-A plain-text journal system built on Markdown: one entry per file, YAML front matter, searchable with grep.
+
+Markdown ベースの日記システムです。1つの記事を YAML フロントマター付きの
+1つの Markdown ファイルとして保存するため、日記をプレーンテキストのまま
+管理できます。`grep` で検索しやすく、Git で履歴を管理でき、将来のデータベース
+移行にも備えています。
+
+## 特徴
+
+- **Markdown が中心** – 1記事1ファイル(`.md`)。データベース不要
+- **ターミナルから検索しやすい** – 日付ベースのファイル名とシンプルな YAML で、`grep`・`ls`・`find` と相性が良い
+- **日付を分けて管理** – 作成日・更新日・出来事の日を独立して記録(`created`、`updated`、`event_date`)
+- **変わらない ID** – `YYYYMMDD-NN` 形式の ID で、将来のデータベース移行に備える
+- **添付はリンクで管理** – `attachments/YYYY/YYYY-MM-DD/` に保存し、Markdown の相対リンクで参照
+- **記事の生成スクリプト** – `mdjour-new.sh` で、規則どおりのファイル名と書式の記事を1コマンドで作成
